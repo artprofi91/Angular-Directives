@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-10 offset-1">
+    <p artBasicHighlight>
+      Artem is a genius! Implemented custom directive</p>
+    <p artBetterBasicHighlight [defaultColor]="'orange'" [highlightColor]="'purple'">Artem is a genius! Implemented custom-better
+      directive
+    </p>
+    <button class="btn-primary art" (click)="toogleView()">Click (toogle view)</button>
+    <div *artUnless="!view">
+      <ul>
+        <li class="list-group-item" *ngFor="let number of numbers" [ngStyle]="{backgroundColor: number%2 !==0? 'pink':'transparent'}">{{number}}</li>
+      </ul>
+    </div>
+    <button class="btn-primary" (click)="getRandomValue()">Click (get random value)</button>
+    <div [ngSwitch]="value">
+      <p *ngSwitchCase="5">Value is 5</p>
+      <p *ngSwitchCase="10">Value is 10</p>
+      <p *ngSwitchCase="20">Value is 20</p>
+      <p *ngSwitchCase="30">Value is 30</p>
+      <p *ngSwitchDefault>Value is Default</p>
+    </div>
+  </div>
+</div>
